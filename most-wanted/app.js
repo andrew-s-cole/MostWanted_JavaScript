@@ -111,7 +111,7 @@ function searchByName(people) {
             return true;
         }
     });
-    return foundPerson;
+        return foundPerson;
 }
 // End of searchByName()
 
@@ -164,7 +164,7 @@ function promptFor(question, valid) {
     } while (!response || !valid(response));
     return response;
 }
-// End of promptFor()
+ //End of promptFor()
 
 /**
  * This helper function checks to see if the value passed into input is a "yes" or "no."
@@ -176,16 +176,52 @@ function yesNo(input) {
 }
 // End of yesNo()
 
-/**
+    /**
  * This helper function operates as a default callback for promptFor's validation.
  * Feel free to modify this to suit your needs.
  * @param {String} input        A string.
  * @returns {Boolean}           Default validation -- no logic yet.
  */
-function chars(input) {
-    return true; // Default validation only
+    function chars(input) {
+        return true; // Default validation only
 }
 // End of chars()
 
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
+
+let response = yesNo;
+function searchByTraits(response, multipleTraits) {
+    multipleTraits = [];{
+    while (response = 'yes'){
+        true;
+            response = "no"
+            false;
+            promptFor("Do you know the persons gender? yes/no")
+            multipleTraits[4] = promptFor("Enter gender male/female")
+            promptFor("Do you know the persons date of birth? yes/no")
+            multipleTraits[5] = promptFor("Please enter persons date of birth")
+            promptFor("Do you know the persons height in inches? yes/no")
+            multipleTraits[6] = promptFor("What is the persons height in inches?");   
+            promptFor("Do you know the persons weight in lbs? yes/no")
+            multipleTraits[7] = promptFor("What is the persons weight in lbs?")
+            promptFor("Do you know the persons eye color? yes/no")   
+            multipleTraits[8] = promptFor("What is the persons eye color?")
+            promptFor("Do you know the persons occupation? yes/no")       
+            multipleTraits[9] = promptFor("What is the persons occupation?")
+            promptFor("Do you know either of the persons parents names? yes/no")          
+            multipleTraits[10] = promptFor("Enter name or names of persons parents")          
+            promptFor("Do you the persons spouse?")
+            multipleTraits[11] = promptFor("Who is the persons current spouse?")
+        }
+        return multipleTraits;
+    }
+}  
+let multipleTraits = searchByTraits()
+    console.log(multipleTraits)
+
+         // we need to be able to step through the entire function and print to console values until linked to foundPerson
+    // We have included all possible traits in a filter() so that an array will be the output.
+    // We want to be able to search by any of the trait names.
+
+    ////  
