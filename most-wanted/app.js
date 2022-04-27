@@ -51,7 +51,7 @@ function app(people) {
  * @param {Array} people        A collection of person objects.
  * @returns {String}            The valid string input retrieved from the user.
  */
-function mainMenu(person, people) {
+function mainMenu(person, people) { 
     // A check to verify a person was found via searchByName() or searchByTrait()
     if (!person[0]) {
         alert("Could not find that individual.");
@@ -66,6 +66,19 @@ function mainMenu(person, people) {
         case "info":
             //! TODO #1: Utilize the displayPerson function //////////////////////////////////////////
             // HINT: Look for a person-object stringifier utility function to help
+            // I want to display all info for found person
+            // display info of found name
+            function foundPersonInfo() {
+                let result = people.filter(function (person) {
+                if (person.firstName == 'Joy' && person.lastName == 'Madden') {
+                return true;
+                }
+                else{
+                    return false;
+                }})
+            return result;
+            }
+            foundPersonInfo()
             let personInfo = displayPerson(person[0]);
             alert(personInfo);
             break;
@@ -139,12 +152,15 @@ function displayPeople(people) {
  */
 function displayPerson(person) {
     let personInfo = `First Name: ${person.firstName}\n`;
-    personInfo += `Gender: ${person.lastName}\n`;
+    personInfo += `Last Name: ${person.lastName}\n`;
+    personInfo += `Gender: ${person.gender}\n`;
     personInfo += `DOB: ${person.dob}\n`;
     personInfo += `Height: ${person.height}\n`;
     personInfo += `Weight: ${person.weight}\n`;
     personInfo += `Eye Color: ${person.eyeColor}\n`;
     personInfo += `Occupation: ${person.occupation}\n`;
+    personInfo += `Parents: ${person.parents}\n`;
+    personInfo += `Current Spouse: ${person.currentSpouse}\n`;
     //! TODO #1a: finish getting the rest of the information to display //////////////////////////////////////////
     alert(personInfo);
 }
