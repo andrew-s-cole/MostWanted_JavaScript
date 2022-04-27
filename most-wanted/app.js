@@ -92,7 +92,7 @@ function mainMenu(person, people) {
             // HINT: Review recursion lecture + demo for bonus user story
             function findPersonDescendants(){
                 let result = people.filter(function (people) {
-                    if (parentIdOne == person.id){
+                    if (people.parents[0] == person.id){
                         return true;
                     }
                     else if (people.parents[1] == person.id){
