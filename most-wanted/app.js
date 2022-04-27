@@ -79,7 +79,7 @@ function mainMenu(person, people) {
             }
             foundPersonInfo();
             let personInfo = displayPerson(person[0]);
-            alert(personInfo);
+            alert(person.id, personInfo);
             break;
         case "family":
             //! TODO #2: Declare a findPersonFamily function //////////////////////////////////////////
@@ -92,16 +92,20 @@ function mainMenu(person, people) {
             // HINT: Review recursion lecture + demo for bonus user story
             function findPersonDescendants(){
                 let result = people.filter(function (people) {
-                    if (people.parent == person.id){
-                    return true;
+                    if (parentIdOne == person.id){
+                        return true;
+                    }
+                    else if (people.parents[1] == person.id){
+                        return true;
                     }
                     else{
                         return false;
                     }})
                 return result;
             }
-            let personDescendants = findPersonDescendants();
-            alert(personDescendants);
+            findPersonDescendants(person[0], people);            
+            let descendants = displayPeople(people);
+            alert(descendants);
             break;
         case "restart":
             // Restart app() from the very beginning
@@ -144,9 +148,7 @@ function searchByName(people) {
  * @param {Array} people        A collection of person objects.
  */
 function displayPeople(people) {
-    alert(
-        people
-            .map(function (person) {
+    alert(people.map(function (person) {
                 return `${person.firstName} ${person.lastName}`;
             })
             .join("\n")
