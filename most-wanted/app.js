@@ -215,35 +215,59 @@ function yesNo(input) {
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 
-let response = yesNo;
-function searchByTraits(response, multipleTraits) {
-    multipleTraits = [];{
-    while (response = 'yes'){
-        true;
-            response = "no"
-            false;
-            promptFor("Do you know the persons gender? yes/no")
-            multipleTraits[4] = promptFor("Enter gender male/female")
-            promptFor("Do you know the persons date of birth? yes/no")
-            multipleTraits[5] = promptFor("Please enter persons date of birth")
-            promptFor("Do you know the persons height in inches? yes/no")
-            multipleTraits[6] = promptFor("What is the persons height in inches?");   
-            promptFor("Do you know the persons weight in lbs? yes/no")
-            multipleTraits[7] = promptFor("What is the persons weight in lbs?")
-            promptFor("Do you know the persons eye color? yes/no")   
-            multipleTraits[8] = promptFor("What is the persons eye color?")
-            promptFor("Do you know the persons occupation? yes/no")       
-            multipleTraits[9] = promptFor("What is the persons occupation?")
-            promptFor("Do you know either of the persons parents names? yes/no")          
-            multipleTraits[10] = promptFor("Enter name or names of persons parents")          
-            promptFor("Do you the persons spouse?")
-            multipleTraits[11] = promptFor("Who is the persons current spouse?")
-        }
-        return multipleTraits;
-    }
-}  
-let multipleTraits = searchByTraits()
-    console.log(multipleTraits)
+function searchByTraits(people) {
+    let result = prompt("What is the persons gender?")
+    return result;
+}
+searchByTraits()
+
+function searchByTraits2(people) {
+    let result = prompt("What is the persons date of birth?")
+    return result;
+}
+searchByTraits2()
+
+function searchByTraits3(people) {
+    let result = prompt("What is the persons weight?")
+    return result;
+}
+searchByTraits3()
+
+function searchByTraits4(people) {
+    let result = prompt("What is the persons height?")
+    return result;
+}
+searchByTraits4()
+
+function searchByTraits5(people) {
+    let result = prompt("What is the persons eye color?")
+    return result;
+}
+searchByTraits5()
+
+function searchByTraits6(people) {
+    let result = prompt("What is the persons occupation?")
+    return result;
+}
+searchByTraits6()
+
+function searchByTraits7(people) {
+    let result = prompt("Who are the persons parents?")
+    return result;
+}
+searchByTraits7()
+
+function searchByTraits8(people) {
+    let result = prompt("Who is the persons current spouse?")
+    return result;
+}
+searchByTraits8()
+
+
+
+
+
+
 
          // we need to be able to step through the entire function and print to console values until linked to foundPerson
     // We have included all possible traits in a filter() so that an array will be the output.
