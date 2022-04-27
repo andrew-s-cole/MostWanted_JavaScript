@@ -215,7 +215,62 @@ function yesNo(input) {
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
 
-function searchByTraits(people) {
+function parents(person, people){
+  let result = people.filter(function(el) {
+    if(person.parents.includes(el.id)){
+        return true;
+    }
+    else{
+      return false;
+  }})
+  let parent = result.map(function(el){
+      return `${el.firstName} ${el.lastName}`;
+    })
+    return parent;
+  }
+function spouse(person, people){
+let result = people.filter(function(el) {
+    if (person.currentSpouse === el.id){
+        return true;
+    }
+    else{
+        return false;
+    }})
+    let spouse = result.map(function(el) {
+        return `${el.firstName} ${el.lastName}`;
+      });
+      return spouse;
+    }
+  
+function siblings(person, people) {
+  if (person.parents.length > 0) {
+    let result = people.filter(function (element) {
+      if (person.id !== element.id && person.parents[0] === element.parents[0]){
+        return true;
+      }
+      else{
+          return false;
+    }})
+    
+  
+     let sibling = result.map(function(el) {
+        return `${el.firstName} ${el.lastName}`;
+      });
+      return sibling;
+    }}
+
+function findPersonFamily(person, people) {
+    let family = ' '
+    family += `Parents:\n${parents(person, people)}\n\n`;
+    family += `Spouse:\n${spouse(person, people)}\n\n`;
+    family += `Siblings:\n${siblings(person, people)}`;
+  
+    alert(family);
+  }
+  
+ 
+
+  function searchByTraits(people) {
     let result = prompt("What is the persons gender?")
     return result;
 }
