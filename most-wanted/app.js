@@ -217,51 +217,54 @@ function yesNo(input) {
 
 function searchByTraits(people) {
     let result = prompt("What is the persons gender?")
-    return result;
+    let foundPerson = people.filter(function (person) {
+        if (result == people.gender) {
+            return true;
+        }
+        else {
+            return false;    
+        }})
+    
 }
-searchByTraits()
+
 
 function searchByTraits2(people) {
     let result = prompt("What is the persons date of birth?")
     return result;
 }
-searchByTraits2()
 
-function searchByTraits3(people) {
+
+function searchByWeight(people) {
     let result = prompt("What is the persons weight?")
     return result;
 }
-searchByTraits3()
+
 
 function searchByTraits4(people) {
     let result = prompt("What is the persons height?")
     return result;
 }
-searchByTraits4()
+
 
 function searchByTraits5(people) {
     let result = prompt("What is the persons eye color?")
     return result;
 }
-searchByTraits5()
+
 
 function searchByTraits6(people) {
     let result = prompt("What is the persons occupation?")
     return result;
 }
-searchByTraits6()
 
-function searchByTraits7(people) {
-    let result = prompt("Who are the persons parents?")
-    return result;
-}
-searchByTraits7()
+
+
 
 function searchByTraits8(people) {
-    let result = prompt("Who is the persons current spouse?")
+    let result = prompt("What is the persons current spouse id?")
     return result;
 }
-searchByTraits8()
+
 
 
 
