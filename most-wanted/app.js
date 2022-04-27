@@ -69,8 +69,8 @@ function mainMenu(person, people) {
             // I want to display all info for found person
             // display info of found name
             function foundPersonInfo() {
-                let result = people.filter(function (person) {
-                if (person.firstName == 'Joy' && person.lastName == 'Madden') {
+                let result = people.filter(function (people) {
+                if (people.firstName == person.firstName && people.lastName == person.lastName) {
                 return true;
                 }
                 else{
