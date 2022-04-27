@@ -137,7 +137,7 @@ function searchByName(people) {
             return true;
         }
     });
-    return foundPerson;
+        return foundPerson;
 }
 // End of searchByName()
 
@@ -191,7 +191,7 @@ function promptFor(question, valid) {
     } while (!response || !valid(response));
     return response;
 }
-// End of promptFor()
+ //End of promptFor()
 
 /**
  * This helper function checks to see if the value passed into input is a "yes" or "no."
@@ -203,16 +203,76 @@ function yesNo(input) {
 }
 // End of yesNo()
 
-/**
+    /**
  * This helper function operates as a default callback for promptFor's validation.
  * Feel free to modify this to suit your needs.
  * @param {String} input        A string.
  * @returns {Boolean}           Default validation -- no logic yet.
  */
-function chars(input) {
-    return true; // Default validation only
+    function chars(input) {
+        return true; // Default validation only
 }
 // End of chars()
 
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
+
+function searchByTraits(people) {
+    let result = prompt("What is the persons gender?")
+    return result;
+}
+searchByTraits()
+
+function searchByTraits2(people) {
+    let result = prompt("What is the persons date of birth?")
+    return result;
+}
+searchByTraits2()
+
+function searchByTraits3(people) {
+    let result = prompt("What is the persons weight?")
+    return result;
+}
+searchByTraits3()
+
+function searchByTraits4(people) {
+    let result = prompt("What is the persons height?")
+    return result;
+}
+searchByTraits4()
+
+function searchByTraits5(people) {
+    let result = prompt("What is the persons eye color?")
+    return result;
+}
+searchByTraits5()
+
+function searchByTraits6(people) {
+    let result = prompt("What is the persons occupation?")
+    return result;
+}
+searchByTraits6()
+
+function searchByTraits7(people) {
+    let result = prompt("Who are the persons parents?")
+    return result;
+}
+searchByTraits7()
+
+function searchByTraits8(people) {
+    let result = prompt("Who is the persons current spouse?")
+    return result;
+}
+searchByTraits8()
+
+
+
+
+
+
+
+         // we need to be able to step through the entire function and print to console values until linked to foundPerson
+    // We have included all possible traits in a filter() so that an array will be the output.
+    // We want to be able to search by any of the trait names.
+
+    ////  
