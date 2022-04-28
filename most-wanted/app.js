@@ -280,9 +280,16 @@ function findPersonFamily(person, people) {
      alert(family);
    }
 function searchByTraits(people) {
-    let result = prompt("What is the persons gender?")
-    return result;
+    let gender = prompt("What is the persons gender?")
+
+    let foundPerson = people.filter(function (person) {
+        if (person.gender === gender) {
+            return true;
+        }
+    });
+        return foundPerson;
 }
+
  
   
  
