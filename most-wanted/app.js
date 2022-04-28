@@ -279,70 +279,145 @@ function findPersonFamily(person, people) {
    
      alert(family);
    }
-function searchByTraits(people) {
-    let gender = prompt("What is the persons gender?")
+function searchByTraits(person){
+    let trait = promptFor('Which trait would you like to select?:\n', chars)
+    trait += `Traits by gender:\n\n${searchByGender(person)}\n\n`;
+    trait += `Traits by dob:\n\n${searchByDob(person)}\n\n`;
+    trait += `Traits by weight:\n\n${searchByDob(person)}\n\n`;
+    trait += `Traits by height:\n\n${searchByDob(person)}\n\n`;
+    trait += `Traits by eyeColor:\n\n${searchByDob(person)}\n\n`;
+    trait += `Traits by Occupation:\n\n${searchByDob(person)}\n\n`;
+    trait += `Traits by SpouseId:\n\n${searchByDob(person)}\n\n`;
 
-    let foundPerson = people.filter(function (person) {
-        if (person.gender === gender) {
-            return true;
-        }
-    });
-        return foundPerson;
+alert(trait)
 }
 
- 
-  
- 
-
 function searchByGender(people) {
-    let result = prompt("What is the persons gender?")
-    return result;
+    let genderSelect = promptFor("What is the gender you are searching for?: ", chars);
+    let result = people.filter(function(el) {
+    if (el.gender == genderSelect){
+        return true;
+    }
+    });
+        if (result.length > 0) {
+        let gender = result.map(function (element) {
+            return `${element.firstName} ${element.lastName}\n`;
+        });
+        return gender;
+        }
 }
 
 function searchByDob(people) {
-    let result = prompt("What is the persons date of birth?")
-    return result;
+    let dobSelect = promptFor("What is the persons dob?: ", chars);
+    let result = people.filter(function(el) {
+    if (el.dob == dobSelect){
+        return true;
+    }
+    });
+        if (result.length > 0) {
+        let dob = result.map(function (element) {
+            return `${element.firstName} ${element.lastName}\n`;
+        });
+        return dob;
+        }
 }
 
-
 function searchByWeight(people) {
-    let result = prompt("What is the persons weight?")
-    return result;
+    let weightSelect = promptFor("What is the Weight you are searching for?: ", chars);
+    let result = people.filter(function(el) {
+    if (el.weight == weightSelect){
+        return true;
+    }
+    });
+        if (result.length > 0) {
+        let weight = result.map(function (element) {
+            return `${element.firstName} ${element.lastName}\n`;
+        });
+        return weight;
+        }
 }
 
 
 function searchByHeight(people) {
-    let result = prompt("What is the persons height?")
-    return result;
+    let heightSelect = promptFor("What is the gender you are searching for?: ", chars);
+    let result = people.filter(function(el) {
+    if (el.height == heightSelect){
+        return true;
+    }
+    });
+        if (result.length > 0) {
+        let height = result.map(function (element) {
+            return `${element.firstName} ${element.lastName}\n`;
+        });
+        return height;
+        }
 }
 
 
 function searchByEyeColor(people) {
-    let result = prompt("What is the persons eye color?")
-    return result;
+    let eyeColor = promptFor("What is the gender you are searching for?: ", chars);
+    let result = people.filter(function(el) {
+    if (el.eyeColor == eyeColor){
+        return true;
+    }
+    });
+        if (result.length > 0) {
+        let eyeColor = result.map(function (element) {
+            return `${element.firstName} ${element.lastName}\n`;
+        });
+        return eyeColor;
+        }
+}
+
+
+function searchByEyeColor(people) {
+    let eyeColor = promptFor("What is the gender you are searching for?: ", chars);
+    let result = people.filter(function(el) {
+    if (el.eyeColor == eyeColor){
+        return true;
+    }
+    });
+        if (result.length > 0) {
+        let eyeColor = result.map(function (element) {
+            return `${element.firstName} ${element.lastName}\n`;
+        });
+        return eyeColor;
+        }
 }
 
 
 function searchByOccupation(people) {
-    let result = prompt("What is the persons occupation?")
-    return result;
+    let occupation = promptFor("What is the gender you are searching for?: ", chars);
+    let result = people.filter(function(el) {
+    if (el.occupation == occupation){
+        return true;
+    }
+    });
+        if (result.length > 0) {
+        let occupation = result.map(function (element) {
+            return `${element.firstName} ${element.lastName}\n`;
+        });
+        return occupation;
+        }
 }
-
 
 function searchBySpouseId(people) {
-    let result = prompt("What is the persons current spouse id?")
-    return result;
+    let spouseId = promptFor("What is the gender you are searching for?: ", chars);
+    let result = people.filter(function(el) {
+    if (el.spouseId == spouseId){
+        return true;
+    }
+    });
+        if (result.length > 0) {
+        let spouseId = result.map(function (element) {
+            return `${element.firstName} ${element.lastName}\n`;
+        });
+        return spouseId;
+        }
 }
 
 
-
-
-
-
-
-
-         // we need to be able to step through the entire function and print to console values until linked to foundPerson
-    // We have included all possible traits in a filter() so that an array will be the output.
-    // We want to be able to search by any of the trait names.
-
-    ////  
+// we need to be able to step through the entire function and print to console values until linked to foundPerson
+// We have included all possible traits in a filter() so that an array will be the output.
+// We want to be able to search by any of the trait names.
+////  
