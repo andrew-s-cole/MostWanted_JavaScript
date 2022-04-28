@@ -67,18 +67,8 @@ function mainMenu(person, people) {
             //! TODO #1: Utilize the displayPerson function //////////////////////////////////////////
             // HINT: Look for a person-object stringifier utility function to help
             // I want to display all info for found person
-            function foundPersonInfo() {
-                let result = people.filter(function (people) {
-                if (people.firstName == person.firstName && people.lastName == person.lastName) {
-                return true;
-                }
-                else{
-                    return false;
-                }})
-            return result;
-            }
-            foundPersonInfo();
-            let personInfo = displayPerson(person[0]);
+            let personInfo = foundPersonInfo(person[0], people);
+            displayPerson(person[0])
             alert(personInfo);
             break;
         case "family":
@@ -89,27 +79,9 @@ function mainMenu(person, people) {
             break;
         case "descendants":
             //! TODO #3: Declare a findPersonDescendants function //////////////////////////////////////////
-            // HINT: Review recursion lecture + demo for bonus user story
-            // remove parents values
-            // filter
-            function findPersonDescendants(){
-                let results = people.filter(function (people){
-                    if (people.parents.length < 2 && people.parents[0] != person[0].id){
-                        return false;
-                    }
-                    else if(people.parents[0] == person[0].id){
-                        return true
-                    }    
-                    else if(people.parents[1] == person[0].id){
-                        return true
-                    }
-                    else{
-                        return false;
-                    }})
-            return results;    
-            }
-            findPersonDescendants(person, people);            
-            let descendants = displayPeople(people);
+            // HINT: Review recursion lecture + demo for bonus user story         
+            let descendants = findPersonDescendants(person[0], people);
+            displayPeople()
             alert(descendants);
             break;
         case "restart":
@@ -405,6 +377,32 @@ function searchBySpouseId(people) {
         }
 }
 
+function foundPersonInfo(person, people) {
+    let result = people.filter(function (el) {
+    if (el.firstName == person.firstName && el.lastName == person.lastName) {
+    return true;
+    }
+    else{
+        return false;
+    }})
+return result;
+}
+function findPersonDescendants(person, people){
+    let results = people.filter(function (el){
+        if (el.parents.length < 2 && el.parents != person.id){
+            return false;
+        }
+        else if(el.parents[0] == person.id){
+            return true
+        }    
+        else if(el.parents[1] == person.id){
+            return true
+        }
+        else{
+            return false;
+        }})
+return results;    
+}
 
 // we need to be able to step through the entire function and print to console values until linked to foundPerson
 // We have included all possible traits in a filter() so that an array will be the output.
