@@ -81,8 +81,7 @@ function mainMenu(person, people) {
             //! TODO #3: Declare a findPersonDescendants function //////////////////////////////////////////
             // HINT: Review recursion lecture + demo for bonus user story         
             let descendants = findPersonDescendants(person[0], people);
-            displayPeople()
-            alert(descendants);
+            displayPeople(descendants)
             break;
         case "restart":
             // Restart app() from the very beginning
@@ -406,21 +405,21 @@ function searchByTraits(person) {
 }
 
     /// While loop the switch case to prompt use /// or condition the users into a single decision //
-    traits += `Traits by gender:\n\n${searchByGender(person)}\n\n`;
-    alert(trait);
-    traits += `Traits by dob:\n\n${searchByDob(person)}\n\n`;
-    alert(trait);
-    traits += `Traits by weight:\n\n${searchByWeight(person)}\n\n`;
-    alert(trait);
-    traits += `Traits by height:\n\n${searchByHeight(person)}\n\n`;
-    alert(trait);
-    traits += `Traits by eyeColor:\n\n${searchByEyeColor(person)}\n\n`;
-    alert(trait);
-    traits += `Traits by Occupation:\n\n${searchByOccupation(person)}\n\n`;
-    alert(trait);
-    traits += `Traits by SpouseId:\n\n${searchBySpouseId(person)}\n\n`;
+    // let traits += `Traits by gender:\n\n${searchByGender(person)}\n\n`;
+    // alert(trait);
+    // traits += `Traits by dob:\n\n${searchByDob(person)}\n\n`;
+    // alert(trait);
+    // traits += `Traits by weight:\n\n${searchByWeight(person)}\n\n`;
+    // alert(trait);
+    // traits += `Traits by height:\n\n${searchByHeight(person)}\n\n`;
+    // alert(trait);
+    // traits += `Traits by eyeColor:\n\n${searchByEyeColor(person)}\n\n`;
+    // alert(trait);
+    // traits += `Traits by Occupation:\n\n${searchByOccupation(person)}\n\n`;
+    // alert(trait);
+    // traits += `Traits by SpouseId:\n\n${searchBySpouseId(person)}\n\n`;
 
-    alert(trait);
+    // alert(trait);
 
 function searchByGender(people) {
     let genderSelect = promptFor("What is the gender you are searching for?: ", chars);
