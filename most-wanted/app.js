@@ -93,24 +93,22 @@ function mainMenu(person, people) {
             // remove parents values
             // filter
             function findPersonDescendants(){
-                let resultOne = people.filter(function (people) {
-                    if (people.parents.length == 0){
+                let results = people.filter(function (people){
+                    if (people.parents.length < 2 && people.parents[0] != person[0].id){
                         return false;
                     }
+                    else if(people.parents[0] == person[0].id){
+                        return true
+                    }    
+                    else if(people.parents[1] == person[0].id){
+                        return true
+                    }
                     else{
-                        return true;
+                        return false;
                     }})
-                    let resultTwo = resultOne.filter(function (people) {
-                        if (people.parents.length == 0){
-                            return true;
-                        }
-                        else{
-                            return false;
-                        }})
-                    return resultTwo;
-                
+            return results;    
             }
-            findPersonDescendants(person[0], people);            
+            findPersonDescendants(person, people);            
             let descendants = displayPeople(people);
             alert(descendants);
             break;
