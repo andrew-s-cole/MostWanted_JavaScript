@@ -79,7 +79,7 @@ function mainMenu(person, people) {
             }
             foundPersonInfo();
             let personInfo = displayPerson(person[0]);
-            alert(person.id, personInfo);
+            alert(personInfo);
             break;
         case "family":
             //! TODO #2: Declare a findPersonFamily function //////////////////////////////////////////
@@ -90,18 +90,25 @@ function mainMenu(person, people) {
         case "descendants":
             //! TODO #3: Declare a findPersonDescendants function //////////////////////////////////////////
             // HINT: Review recursion lecture + demo for bonus user story
+            // remove parents values
+            // filter
             function findPersonDescendants(){
-                let result = people.filter(function (people) {
-                    if (people.parents[0] == person.id){
-                        return true;
-                    }
-                    else if (people.parents[1] == person.id){
-                        return true;
+                let resultOne = people.filter(function (people) {
+                    if (people.parents.length == 0){
+                        return false;
                     }
                     else{
-                        return false;
+                        return true;
                     }})
-                return result;
+                    let resultTwo = resultOne.filter(function (people) {
+                        if (people.parents.length == 0){
+                            return true;
+                        }
+                        else{
+                            return false;
+                        }})
+                    return resultTwo;
+                
             }
             findPersonDescendants(person[0], people);            
             let descendants = displayPeople(people);
@@ -221,49 +228,49 @@ function searchByTraits(people) {
     let result = prompt("What is the persons gender?")
     return result;
 }
-searchByTraits()
+
 
 function searchByTraits2(people) {
     let result = prompt("What is the persons date of birth?")
     return result;
 }
-searchByTraits2()
+
 
 function searchByTraits3(people) {
     let result = prompt("What is the persons weight?")
     return result;
 }
-searchByTraits3()
+
 
 function searchByTraits4(people) {
     let result = prompt("What is the persons height?")
     return result;
 }
-searchByTraits4()
+
 
 function searchByTraits5(people) {
     let result = prompt("What is the persons eye color?")
     return result;
 }
-searchByTraits5()
+
 
 function searchByTraits6(people) {
     let result = prompt("What is the persons occupation?")
     return result;
 }
-searchByTraits6()
+
 
 function searchByTraits7(people) {
     let result = prompt("Who are the persons parents?")
     return result;
 }
-searchByTraits7()
+
 
 function searchByTraits8(people) {
     let result = prompt("Who is the persons current spouse?")
     return result;
 }
-searchByTraits8()
+
 
 
 
