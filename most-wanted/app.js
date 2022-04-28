@@ -279,24 +279,178 @@ function findPersonFamily(person, people) {
    
      alert(family);
    }
-function searchByTraits(person){
-    let trait = promptFor('Which trait would you like to select?:\n', chars)
-    trait += `Traits by gender:\n\n${searchByGender(person)}\n\n`;
-    alert(trait)
-    trait += `Traits by dob:\n\n${searchByDob(person)}\n\n`;
-    alert(trait)
-    trait += `Traits by weight:\n\n${searchByWeight(person)}\n\n`;
-    alert(trait)
-    trait += `Traits by height:\n\n${searchByHeight(person)}\n\n`;
-    alert(trait)
-    trait += `Traits by eyeColor:\n\n${searchByEyeColor(person)}\n\n`;
-    alert(trait)
-    trait += `Traits by Occupation:\n\n${searchByOccupation(person)}\n\n`;
-    alert(trait)
-    trait += `Traits by SpouseId:\n\n${searchBySpouseId(person)}\n\n`;
+function searchByTraits(person) {
+    let traits = promptFor('Which trait would you like to select?:\n', chars)
+    /// Build switch case for independent traits searching///
+    switch (traits) {
 
-    alert(trait)
+        case "gender": {
+            //! Utilize the searchByGender function //////////////////////////////////////////
+            // HINT: Look for a person-object stringifier utility function to help
+            // I want to display all info for found trait
+            function foundPersonInfo() {
+                let result = people.filter(function (people) {
+                    if (people.gender == person.gender) {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                })
+                return result;
+            }
+            foundPersonInfo();
+            let personInfo = displayPerson(person[0]);
+            alert(personInfo);
+            break;
+        }
+        case "dob": {
+            //! Utilize the searchByDob function //////////////////////////////////////////
+            // HINT: Look for a person-object stringifier utility function to help
+            // I want to display all info for found trait
+            function foundPersonInfo() {
+                let result = people.filter(function (people) {
+                    if (people.dob == person.dob) {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                })
+                return result;
+            }
+            foundPersonInfo();
+            let personInfo = displayPerson(person[0]);
+            alert(personInfo);
+            break;
+        }
+        case "weight": {
+            //! Utilize the searchByWeight function //////////////////////////////////////////
+            // HINT: Look for a person-object stringifier utility function to help
+            // I want to display all info for found trait
+            function foundPersonInfo() {
+                let result = people.filter(function (people) {
+                    if (people.weight == person.weight) {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                })
+                return result;
+            }
+            foundPersonInfo();
+            let personInfo = displayPerson(person[0]);
+            alert(personInfo);
+            break;
+        }
+        case "height":{
+            //! Utilize the searchByHeight function //////////////////////////////////////////
+            // HINT: Look for a person-object stringifier utility function to help
+            // I want to display all info for found trait
+            function foundPersonInfo() {
+                let result = people.filter(function (people) {
+                    if (people.height == person.height) {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                })
+                return result;
+            }
+            foundPersonInfo();
+            let personInfo = displayPerson(person[0]);
+            alert(personInfo);
+            break;        
+        }
+        case "eyeColor": {
+                    //! Utilize the searchByEyeColor function //////////////////////////////////////////
+                    // HINT: Look for a person-object stringifier utility function to help
+                    // I want to display all info for found trait
+                    function foundPersonInfo() {
+                        let result = people.filter(function (people) {
+                            if (people.eyeColor == person.eyeColor) {
+                                return true;
+                            }
+                            else {
+                                return false;
+                            }
+                        })
+                        return result;
+                    }
+                    foundPersonInfo();
+                    let personInfo = displayPerson(person[0]);
+                    alert(personInfo);
+                    break;
+        }
+        case "Occupation": {
+            //! Utilize the searchByOccupation function //////////////////////////////////////////
+            // HINT: Look for a person-object stringifier utility function to help
+            // I want to display all info for found trait
+            function foundPersonInfo() {
+                let result = people.filter(function (people) {
+                    if (people.gender == person.gender) {
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                })
+                return result;
+            }
+            foundPersonInfo();
+            let personInfo = displayPerson(person[0]);
+            alert(personInfo);
+            break;
+        }
+        case "SpouseId": {
+                //! Utilize the searchBySpouseId function //////////////////////////////////////////
+                // HINT: Look for a person-object stringifier utility function to help
+                // I want to display all info for found trait
+                    function foundPersonInfo() {
+                    let result = people.filter(function (people) {
+                        if (people.spouseId == person.spouseId) {
+                            return true;
+                        }
+                        else {
+                            return false;
+                        }
+                        
+                    })
+                    
+                        return result;
+                        
+                    }
+                    
+            foundPersonInfo();
+            
+            let personInfo = displayPerson(person[0]);
+            
+            alert(personInfo);
+            
+            break;
+        }
+            
+    }
 }
+
+    /// While loop the switch case to prompt use /// or condition the users into a single decision //
+    traits += `Traits by gender:\n\n${searchByGender(person)}\n\n`;
+    alert(trait);
+    traits += `Traits by dob:\n\n${searchByDob(person)}\n\n`;
+    alert(trait);
+    traits += `Traits by weight:\n\n${searchByWeight(person)}\n\n`;
+    alert(trait);
+    traits += `Traits by height:\n\n${searchByHeight(person)}\n\n`;
+    alert(trait);
+    traits += `Traits by eyeColor:\n\n${searchByEyeColor(person)}\n\n`;
+    alert(trait);
+    traits += `Traits by Occupation:\n\n${searchByOccupation(person)}\n\n`;
+    alert(trait);
+    traits += `Traits by SpouseId:\n\n${searchBySpouseId(person)}\n\n`;
+
+    alert(trait);
 
 function searchByGender(people) {
     let genderSelect = promptFor("What is the gender you are searching for?: ", chars);
@@ -375,8 +529,6 @@ function searchByEyeColor(people) {
         }
 }
 
-
-
 function searchByOccupation(people) {
     let occupation = promptFor("What is the Occupation you are searching for?: ", chars);
     let result = people.filter(function(el) {
@@ -411,4 +563,4 @@ function searchBySpouseId(people) {
 // we need to be able to step through the entire function and print to console values until linked to foundPerson
 // We have included all possible traits in a filter() so that an array will be the output.
 // We want to be able to search by any of the trait names.
-////  
+////
