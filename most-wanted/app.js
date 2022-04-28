@@ -239,7 +239,7 @@ function parents(person, people){
      return parent;
    }
  }
- function spouse(person, people){
+function spouse(person, people){
  let result = people.filter(function(el){
      if (person.currentSpouse === el.id) 
      return true;
@@ -253,7 +253,7 @@ function parents(person, people){
      });
      return spouse;
    }}
- function siblings(person, people) {
+function siblings(person, people) {
  if (person.parents.length > 0) {
  let result = people.filter(function(el) {
      if (el.parents[0] === person.parents[0] && el.id !== person.id)
@@ -270,8 +270,8 @@ function parents(person, people){
        }}
      else{
          return `${person.firstName} ${person.lastName} does not have any siblings`
-     }}
- function findPersonFamily(person, people) {
+    }}
+function findPersonFamily(person, people) {
      let family = ' '
      family += `Parents:\n${parents(person, people)}\n\n`;
      family += `Spouse:\n${spouse(person, people)}\n\n`;
@@ -279,21 +279,20 @@ function parents(person, people){
    
      alert(family);
    }
-   function searchByTraits(people) {
-     let result = prompt("What is the persons gender?")
-     return result;
- }
+function searchByTraits(people) {
+    let result = prompt("What is the persons gender?")
+    return result;
+}
  
   
  
 
-  function searchByTraits(people) {
+function searchByGender(people) {
     let result = prompt("What is the persons gender?")
-      return result;
+    return result;
 }
 
-
-function searchByTraits2(people) {
+function searchByDob(people) {
     let result = prompt("What is the persons date of birth?")
     return result;
 }
@@ -305,31 +304,25 @@ function searchByWeight(people) {
 }
 
 
-function searchByTraits4(people) {
+function searchByHeight(people) {
     let result = prompt("What is the persons height?")
     return result;
 }
 
 
-function searchByTraits5(people) {
+function searchByEyeColor(people) {
     let result = prompt("What is the persons eye color?")
     return result;
 }
 
 
-function searchByTraits6(people) {
+function searchByOccupation(people) {
     let result = prompt("What is the persons occupation?")
     return result;
 }
 
 
-function searchByTraits7(people) {
-    let result = prompt("Who are the persons parents?")
-    return result;
-}
-
-
-function searchByTraits8(people) {
+function searchBySpouseId(people) {
     let result = prompt("What is the persons current spouse id?")
     return result;
 }
